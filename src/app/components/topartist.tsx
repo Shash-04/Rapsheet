@@ -24,8 +24,8 @@ export default function TopArtists() {
         const element = document.getElementById("TopArtist");
         if (!element) return;
 
-        const images = element.getElementsByTagName("img");
-        await Promise.all([...images].map(img => new Promise(resolve => {
+    const images = Array.from(element.getElementsByTagName("img"));
+await Promise.all(images.map(img => new Promise(resolve => {
             if (img.complete) resolve(true);
             else img.onload = () => resolve(true);
         })));
