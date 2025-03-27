@@ -61,9 +61,7 @@ export default function TopTracks() {
                 setName(data.user.name);
 
                 // Format the expiration date properly
-                const expiryDate = new Date(data.expires);
-                const localExpiryDate = new Date(expiryDate.getTime() - expiryDate.getTimezoneOffset() * 60000);
-                const formatted = localExpiryDate.toLocaleDateString("en-US", {
+                const formatted = expiryDate.toLocaleDateString("en-US", {
                     weekday: "long",
                     month: "long",
                     day: "numeric",
