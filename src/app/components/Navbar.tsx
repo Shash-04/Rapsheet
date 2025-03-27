@@ -10,16 +10,18 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="bg-gradient-to-r from-purple-600 to-indigo-800 shadow-2xl">
+        <nav className="bbg-gradient-to-br from-gray-950 via-black to-gray-900 shadow-2xl">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     {/* Logo/Name */}
-                    <div className="flex items-center">
+                    <div className="">
                         <Link href="/" className=" text-white font-bold text-3xl hover:text-purple-200 transition-all duration-300 transform hover:scale-105">
-                        RapSheet 
+                            <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                                RapSheet
+                            </h1>
                         </Link>
                     </div>
-                    
+
 
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex space-x-4 items-center">

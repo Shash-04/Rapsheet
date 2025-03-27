@@ -11,7 +11,7 @@ export async function GET(req: Request) {
         });
     }
 
-    const response = await fetch("https://api.spotify.com/v1/me/top/tracks?limit=10", {
+    const response = await fetch("https://api.spotify.com/v1/me/top/artists?limit=10", {
         headers: { Authorization: `Bearer ${session.accessToken}` },
     });
 
@@ -20,4 +20,5 @@ export async function GET(req: Request) {
         status: 200,
         headers: { "Content-Type": "application/json" },
     });
+    
 }

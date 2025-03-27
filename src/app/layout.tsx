@@ -26,7 +26,7 @@ export default function RootLayout({
       <body className={roboto.className}>
         <AuthProvider>
           <Navbar />
-          <main className="flex justify-center items-start p-6 min-h-screen">
+          <main className="flex justify-center items-start p-6 min-h-screen bg-gradient-to-br from-gray-700 via-black to-gray-900">
             {children}
           </main>
           <Footer />

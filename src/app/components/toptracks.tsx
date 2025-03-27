@@ -62,7 +62,8 @@ export default function TopTracks() {
 
                 // Format the expiration date properly
                 const expiryDate = new Date(data.expires);
-                const formatted = expiryDate.toLocaleDateString("en-US", {
+                const localExpiryDate = new Date(expiryDate.getTime() - expiryDate.getTimezoneOffset() * 60000);
+                const formatted = localExpiryDate.toLocaleDateString("en-US", {
                     weekday: "long",
                     month: "long",
                     day: "numeric",
@@ -77,7 +78,7 @@ export default function TopTracks() {
 
         async function fetchTracks() {
             try {
-                const res = await fetch("/api/spotify");
+                const res = await fetch("/api/spotify/toptracks");
                 const data = await res.json();
                 setTracks(data.items);
             } catch (error) {
@@ -122,7 +123,7 @@ export default function TopTracks() {
                         {/* <img src="list.jpg" alt="" /> */}
                         {tracks.map((track, index) => (
                             <li key={index} className="flex items-center space-x-4 p-2 text-black rounded-md">
-                                <img src={track.album.images[0].url} alt={track.name} className="w-12 h-12 rounded-md" />
+                                <img src={track.album.images[0].url} alt={track.name} className="hover:scale-110 w-12 h-12 rounded-md" />
                                 <div>
                                     <a
                                         href={track.external_urls.spotify}

@@ -1,49 +1,78 @@
-# "NextAuth.js Login Authentication"
+# 🎵 Top Artists Tracker
 
-## With Next.js App Router
+🚀 **A sleek and stylish Next.js app that fetches and displays your top Spotify artists in a unique receipt-like format!**
 
----
+## 🌟 Features
+✅ Fetches your **top artists** from Spotify API 🎧  
+✅ Displays the results in a **receipt-styled list** 🧾  
+✅ Supports **image downloads** of your top artist list 🖼️  
+✅ Uses **html2canvas** to capture and download the receipt 📸  
+✅ Beautiful **IBM Plex Mono font styling** ✨  
+✅ **Dark theme UI** for a modern look 🌙  
 
-### Author Links
+## 🛠️ Tech Stack
+- **Next.js** ⚡
+- **TypeScript** 📜
+- **Tailwind CSS** 🎨
+- **Spotify API** 🎶
+- **html2canvas** 🖼️
+- **React Hooks** 🪝
 
-👋 Hello, I'm Dave Gray.
 
-👉 [My Courses](https://courses.davegray.codes/)
+## 🚀 Getting Started
 
-✅ [Check out my YouTube Channel with hundreds of tutorials](https://www.youtube.com/DaveGrayTeachesCode).
+### **1️⃣ Clone the Repository**
+```sh
+ git clone https://github.com/yourusername/top-artists-tracker.git
+ cd top-artists-tracker
+```
 
-🚩 [Subscribe to my channel](https://bit.ly/3nGHmNn)
+### **2️⃣ Install Dependencies**
+```sh
+npm install
+# or
+yarn install
+```
 
-☕ [Buy Me A Coffee](https://buymeacoffee.com/DaveGray)
+### **3️⃣ Set Up Environment Variables**
+Create a `.env.local` file in the root and add:
+```sh
+NEXT_PUBLIC_SPOTIFY_CLIENT_ID=your_client_id
+NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET=your_client_secret
+```
+*(Get your credentials from the Spotify Developer Dashboard!)*
 
-🚀 Follow Me:
+### **4️⃣ Run the App**
+```sh
+npm run dev
+# or
+yarn dev
+```
+🔹 The app will be available at: `http://localhost:3000`
 
-- [Twitter](https://twitter.com/yesdavidgray)
-- [LinkedIn](https://www.linkedin.com/in/davidagray/)
-- [Blog](https://yesdavidgray.com)
-- [Reddit](https://www.reddit.com/user/DaveOnEleven)
+## 📜 API Endpoints
+- `/api/spotify/topartist` → Fetches top artists 🎤  
+- `/api/spotify/toptracks` → Fetches top tracks 🎤  
+- `/api/auth/session` → Manages user authentication 🔐  
 
----
+## 📌 How It Works
+1. **User logs in** and grants permission to access Spotify data 🔑  
+2. App **fetches top artists** and displays them 🎨  
+2. App **fetches top tracks** and displays them 🎨  
+3. User can **download the receipt** as an image 📄  
 
-### Description
+## 🎨 Customization
+Want to tweak the UI? Modify `styles.css` and components inside `components/` folder.
 
-📺 [YouTube Video](https://youtu.be/w2h54xz6Ndw) for this repository.
+## 🛠️ Known Issues & Fixes
+🔴 **Image not loading?** Ensure the Spotify API returns images or use a fallback:  
+```tsx
+<img src={track.album?.images?.[0]?.url || '/placeholder.jpg'} alt={track.name} />
+```
 
----
+## 🏆 Credits
+💡 **Developed by:** [Shashwat Vaish](https://github.com/Shash-04) 🚀
 
-### 🎓 Academic Honesty
-
-**DO NOT COPY FOR AN ASSIGNMENT** - Avoid plagiarism and adhere to the spirit of this [Academic Honesty Policy](https://www.freecodecamp.org/news/academic-honesty-policy/).
-
----
-
-### ⚙ Free Web Dev Tools
-- 🔗 [Google Chrome Web Browser](https://google.com/chrome/)
-- 🔗 [Visual Studio Code (aka VS Code)](https://code.visualstudio.com/)
-- 🔗 [ES7 React Snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
-
-### 📚 References
-- 🔗 [NextAuth.js Official Site](https://next-auth.js.org/)
-- 🔗 [Next.js Official Site](https://nextjs.org/)
-
+## 📜 License
+📝 MIT License – Free to use and modify! 🔥
 
